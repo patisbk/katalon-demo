@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case for Login in OrangeHRM</description>
+   <name>Login</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4eb029a2-007e-4d83-9587-f9eb550bc1d7</testCaseGuid>
+</TestCaseEntity>
