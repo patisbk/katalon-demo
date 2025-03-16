@@ -17,12 +17,26 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+TestData loginData = findTestData('Data Files/Login/data_login')
+
 WebUI.openBrowser('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 WebUI.maximizeWindow()
 
-// Target username
-WebUI.setText(findTestObject('Object Repository/Login/Inputs/input_username'), '')
-WebUI.setText(findTestObject('Object Repository/Login/Inputs/input_password'), '')
+for (int i = 0; i < loginData.getRowNumbers(); i++) {
+	
+	String username = loginData.getValue("username", i+1)
+   	String password = loginData.getValue("password", i+1)
+	   
 
-WebUI.click(findTestObject('Object Repository/Login/Buttons/btn_login'))
+   
+    WebUI.setText(findTestObject('Object Repository/Login/Inputs/input_username'), username)
+    WebUI.setText(findTestObject('Object Repository/Login/Inputs/input_password'), password)
 
+    WebUI.click(findTestObject('Object Repository/Login/Buttons/btn_login'))
+	
+	//if(username.isEmpty() && password.isEmpty()) {
+	//	println("Username and Password is empty!")
+	//}
+	
+   
+}
